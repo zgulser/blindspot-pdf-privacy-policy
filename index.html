@@ -1,153 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlindSpot PDF - Privacy-First Document Redaction</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlindSpot PDF & Image Redactor — 100% On-Device Privacy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-900">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navigation -->
-    <header class="max-w-5xl w-full mx-auto px-6 py-6 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center shadow-md">
-                <div class="w-5 h-5 bg-amber-500 rounded-sm relative flex items-center justify-center">
-                    <div class="w-3 h-1 bg-slate-900 rounded-full"></div>
-                </div>
-            </div>
-            <span class="font-bold text-xl tracking-tight text-white">BlindSpot <span class="text-amber-500">PDF</span></span>
-        </div>
-        <button onclick="toggleModal()" class="text-xs font-medium text-slate-400 hover:text-slate-200 transition-colors">
-            Privacy Policy
-        </button>
-    </header>
+  <!-- Navigation -->
+  <header class="w-full max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center shadow-md">
+        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <span class="font-bold text-xl tracking-tight text-white">BlindSpot</span>
+    </div>
+    <a href="#privacy-modal" onclick="toggleModal(true)" class="text-sm font-medium text-slate-400 hover:text-amber-400 transition-colors">Privacy Policy</a>
+  </header>
 
-    <!-- Main Hero Section -->
-    <main class="max-w-4xl mx-auto px-6 py-12 text-center flex flex-col items-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-8">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            AIR-GAP ACTIVE • 100% ON-DEVICE
-        </div>
+  <!-- Hero Section -->
+  <main class="w-full max-w-4xl mx-auto px-6 py-12 text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-8">
+      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      100% On-Device & Air-Gapped Redaction
+    </div>
+    
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+      Redact PDFs & Images.<br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">
+        Zero Cloud. Absolute Privacy.
+      </span>
+    </h1>
+    
+    <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Effortlessly sanitize sensitive text, financial data, and PII from PDF documents and images directly on your device. Your sensitive files never touch a cloud server.
+    </p>
 
-        <!-- Headline -->
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-            Sanitize sensitive PDF data with <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">zero cloud risk</span>.
-        </h1>
+    <!-- App Store / CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <button class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-2xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.07c.62-.76 1.05-1.81.93-2.87-.9.04-2.01.6-2.65 1.35-.57.66-1.07 1.74-.93 2.78 1.02.08 2.03-.5 2.65-1.26z"/></svg>
+        <span>Download for iOS</span>
+      </button>
 
-        <!-- Subtitle -->
-        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-light mb-10 leading-relaxed">
-            Automatic and manual redaction designed for complete digital ownership. Your documents never leave your device memory.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a href="#download" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-base transition-all transform active:scale-95 shadow-lg shadow-amber-500/20">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                Get BlindSpot PDF
-            </a>
-            <button onclick="toggleModal()" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-base border border-slate-700 transition-all">
-                Read Privacy Guarantee
-            </button>
-        </div>
-
-        <!-- App Guarantee Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 w-full text-left">
-            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                </div>
-                <h3 class="text-white font-semibold mb-1">Zero-Cloud Dependency</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">No servers, no tracking, and no third-party APIs. All processing stays strictly local.</p>
-            </div>
-            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <h3 class="text-white font-semibold mb-1">Smart Auto-Detect</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">Instantly locate emails, phone numbers, tax IDs, and financial records with a single tap.</p>
-            </div>
-            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <h3 class="text-white font-semibold mb-1">Permanent Blackout</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">Redacted elements are permanently removed from the document stream, not just visually hidden.</p>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="max-w-5xl w-full mx-auto px-6 py-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-        <p>&copy; 2026 BlindSpot PDF. All rights reserved.</p>
-        <button onclick="toggleModal()" class="hover:text-slate-300 transition-colors">Privacy Policy</button>
-    </footer>
-
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-            <!-- Modal Header -->
-            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white">Privacy Policy</h2>
-                <button onclick="toggleModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <!-- Modal Body -->
-            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-300 leading-relaxed">
-                <div>
-                    <span class="text-xs text-slate-500 block mb-1">Effective & Last Updated: October 25, 2026</span>
-                    <h3 class="text-base font-semibold text-white mb-2">Our Core Privacy Commitment</h3>
-                    <p>At <strong>BlindSpot PDF</strong>, we believe that your documents are strictly your business. We built this application around a simple principle: <strong>your data should never leave your device</strong>.</p>
-                    <p class="mt-2">BlindSpot PDF operates with zero-cloud dependency. All document processing, text analysis, and redactions happen entirely locally on your phone or tablet.</p>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-semibold text-white">1. Information We Do Not Collect</h4>
-                    <ul class="list-disc pl-5 space-y-1 text-slate-400">
-                        <li><strong>Document Files:</strong> We never upload, transfer, or store your PDFs or images on external servers.</li>
-                        <li><strong>Redacted Content:</strong> Names, addresses, emails, phone numbers, tax IDs, credit card numbers, or custom terms remain entirely in your device memory.</li>
-                        <li><strong>Personal Identifiers:</strong> We do not collect your name, email address, phone number, or device identifiers.</li>
-                    </ul>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-semibold text-white">2. Local Device Permissions</h4>
-                    <ul class="list-disc pl-5 space-y-1 text-slate-400">
-                        <li><strong>Storage / File Access:</strong> Used exclusively to let you select a PDF or image from your local files and save the redacted copy back.</li>
-                        <li><strong>Camera / Photos (Optional):</strong> Used only if you capture a document image directly within the app for redaction.</li>
-                    </ul>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-semibold text-white">3. Third-Party Services & Analytics</h4>
-                    <p class="text-slate-400">BlindSpot PDF does <strong>not</strong> include third-party tracking SDKs, advertising frameworks, remote OCR APIs, or behavior analytics tools.</p>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-semibold text-white">4. Contact Us</h4>
-                    <p class="text-slate-400">For questions regarding our privacy practices, contact us at: <a href="mailto:privacy@blindspotpdf.app" class="text-amber-400 hover:underline">privacy@blindspotpdf.app</a></p>
-                </div>
-            </div>
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-slate-800 bg-slate-900/50 text-right">
-                <button onclick="toggleModal()" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-sm transition-colors">
-                    Close
-                </button>
-            </div>
-        </div>
+      <button class="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold rounded-2xl shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+        <svg class="w-5 h-5 fill-current text-amber-500" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.38.214-.725.609-.92zm11.3 11.3l2.553 2.553-11.98 6.945 9.427-9.498zm0-2.228L5.482 1.388l11.98 6.945-2.553 2.553zm3.483 1.114l2.973 1.722c.516.299.516 1.096 0 1.395l-2.973 1.722-2.186-2.186 2.186-2.653z"/></svg>
+        <span>Download for Android</span>
+      </button>
     </div>
 
-    <script>
-        function toggleModal() {
-            const modal = document.getElementById('privacyModal');
-            modal.classList.toggle('hidden');
-        }
-    </script>
+    <!-- Feature Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-base mb-2">100% On-Device</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">No accounts, no external tracking, and zero remote server processing. Your documents stay safe on your device.</p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-base mb-2">PDFs & Image Files</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Redact PDFs, digital documents, scanned papers, screenshots, and photo attachments effortlessly in one app.</p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-bold text-white text-base mb-2">Smart Auto-Detection</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Instantly spot and obscure PII like emails, phone numbers, tax IDs, and credit card numbers with single-tap controls.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full max-w-6xl mx-auto px-6 py-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-sm text-slate-500 gap-4">
+    <p>&copy; 2026 BlindSpot. All rights reserved.</p>
+    <div class="flex gap-6">
+      <button onclick="toggleModal(true)" class="hover:text-amber-400 transition-colors">Privacy Policy</button>
+      <a href="mailto:support@blindspotpdf.app" class="hover:text-amber-400 transition-colors">Contact Support</a>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacy-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="glass-card bg-slate-900 max-w-2xl w-full max-h-[85vh] rounded-3xl p-6 sm:p-8 overflow-y-auto border border-slate-800 shadow-2xl relative">
+      <button onclick="toggleModal(false)" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-full bg-slate-800/50">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <h2 class="text-2xl font-bold text-white mb-2">Privacy Policy</h2>
+      <p class="text-xs text-amber-400 font-semibold mb-6">Effective Date: October 25, 2026</p>
+
+      <div class="space-y-6 text-slate-300 text-sm leading-relaxed">
+        <section>
+          <h3 class="text-base font-semibold text-white mb-2">Our Core Privacy Commitment</h3>
+          <p>At <strong>BlindSpot</strong>, we believe your files and documents are strictly your business. BlindSpot operates on a strict <strong>100% on-device, zero-cloud architecture</strong>. All PDF rendering, image processing, OCR, and redaction procedures happen exclusively on your device hardware.</p>
+        </section>
+
+        <section>
+          <h3 class="text-base font-semibold text-white mb-2">1. Information We Do Not Collect</h3>
+          <p>Because BlindSpot operates completely local and offline, we do <strong>not</strong> collect, store, transmit, or monetize any of your data.</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-slate-400">
+            <li><strong>Documents & Images:</strong> Your files never leave your device.</li>
+            <li><strong>Redacted Content:</strong> Names, emails, phone numbers, tax IDs, or custom terms remain transiently in memory and are never uploaded.</li>
+            <li><strong>Personal Identifiers:</strong> No registration, phone numbers, or user IDs required.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 class="text-base font-semibold text-white mb-2">2. Local Device Permissions</h3>
+          <p>BlindSpot requests minimal standard platform permissions solely to fulfill its core redaction utility:</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-slate-400">
+            <li><strong>Storage / Files Access:</strong> Required to open local PDFs/images and save your redacted copies.</li>
+            <li><strong>Camera / Photos (Optional):</strong> Required only if capturing a document photo directly within the app.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 class="text-base font-semibold text-white mb-2">3. Third-Party Services & Analytics</h3>
+          <p>BlindSpot includes zero third-party tracking SDKs, cloud AI APIs, or behavior monitoring tools. Native platform services (e.g., Apple App Store / Google Play In-App Purchases and Review dialogs) are handled securely through standard OS APIs.</p>
+        </section>
+
+        <section>
+          <h3 class="text-base font-semibold text-white mb-2">4. Contact Us</h3>
+          <p>If you have any questions regarding our on-device privacy architecture, contact us at <a href="mailto:privacy@blindspotpdf.app" class="text-amber-400 underline">privacy@blindspotpdf.app</a>.</p>
+        </section>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-slate-800 text-right">
+        <button onclick="toggleModal(false)" class="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition-colors">
+          Got it
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('privacy-modal');
+      if (show) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+  </script>
 </body>
 </html>
