@@ -1,180 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blindspot PDF Privacy Policy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindSpot PDF - Privacy-First Document Redaction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --bg: #f6f8fb;
-        --card: #ffffff;
-        --text: #162033;
-        --muted: #53627c;
-        --border: #e6ebf2;
-        --accent: #2563eb;
-        --accent-soft: #dbeafe;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.7;
-      }
-
-      .container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 48px 20px 64px;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-        padding: 36px 28px;
-      }
-
-      h1, h2, h3 {
-        color: var(--text);
-        line-height: 1.3;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-top: 0;
-        margin-bottom: 0.25em;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
-      }
-
-      p, li {
-        color: var(--muted);
-      }
-
-      ul {
-        padding-left: 1.3rem;
-      }
-
-      .meta {
-        display: inline-block;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-weight: 700;
-        font-size: 0.85rem;
-        padding: 0.5rem 0.8rem;
-        border-radius: 999px;
-        margin-bottom: 1rem;
-      }
-
-      .footer {
-        margin-top: 2.5rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid var(--border);
-      }
+        body { font-family: 'Inter', sans-serif; }
     </style>
-  </head>
-  <body>
-    <main class="container">
-      <div class="card">
-        <div class="meta">Privacy Policy</div>
-        <h1>Blindspot PDF Privacy Policy</h1>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-900">
 
-        <p>
-          This Privacy Policy explains how Blindspot PDF handles information when you use
-          our app and related services. We respect your privacy and aim to keep the
-          collection and use of personal data minimal and transparent.
-        </p>
-
-        <h2>1. Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
-        <ul>
-          <li>Information you provide directly, such as feedback or support requests.</li>
-          <li>PDF files or document content you process through the app.</li>
-          <li>Device and app usage information, such as app version, operating system, and crash diagnostics.</li>
-          <li>Diagnostic or performance data needed to maintain reliability and improve the service.</li>
-        </ul>
-
-        <h2>2. How We Use Information</h2>
-        <p>We use information to:</p>
-        <ul>
-          <li>Provide, maintain, and improve the app experience.</li>
-          <li>Process PDF documents and related features requested by the user.</li>
-          <li>Diagnose bugs, troubleshoot issues, and improve app performance.</li>
-          <li>Respond to support requests and communicate important updates.</li>
-        </ul>
-
-        <h2>3. Local Processing and Data Storage</h2>
-        <p>
-          Blindspot PDF may process documents locally on your device. We do not require
-          users to upload sensitive files to a remote server in order to use core
-          functionality. Where local storage is used, it is for the operation of the app
-          and user convenience.
-        </p>
-
-        <h2>4. Data Sharing</h2>
-        <p>
-          We do not sell personal information. We may share limited information with trusted
-          service providers only when necessary to support app operations, analytics, or
-          technical maintenance. These providers are obligated to handle the information in
-          a secure and lawful manner.
-        </p>
-
-        <h2>5. Analytics and Performance</h2>
-        <p>
-          We may use analytics tools to understand app usage patterns, performance, and user
-          experience. This data is used in aggregated or de-identified form to improve our
-          products and features.
-        </p>
-
-        <h2>6. Security</h2>
-        <p>
-          We use reasonable administrative, technical, and organizational safeguards to protect
-          information from unauthorized access, loss, misuse, or alteration. However, no
-          method of transmission or storage is completely secure, and we cannot guarantee
-          absolute security.
-        </p>
-
-        <h2>7. Your Choices</h2>
-        <p>
-          You can choose not to provide certain information, though this may reduce the app's
-          functionality. You may also manage permissions on your device and update or delete
-          any local data associated with the app according to your device settings.
-        </p>
-
-        <h2>8. Children's Privacy</h2>
-        <p>
-          Blindspot PDF is not intended for children under the age of 13, and we do not
-          knowingly collect personal information from children under 13 without appropriate
-          parental consent.
-        </p>
-
-        <h2>9. Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy periodically. Any changes will be reflected on this
-          page with an updated effective date. Continued use of the app after such changes
-          indicates acceptance of the updated policy.
-        </p>
-
-        <h2>10. Contact</h2>
-        <p>
-          If you have questions or concerns about this Privacy Policy or how your information is
-          handled, please contact us through the support channels associated with the Blindspot
-          PDF app or the repository owner listed for this project.
-        </p>
-
-        <div class="footer">
-          <p><strong>Effective Date:</strong> October 25, 2026</p>
+    <!-- Header Navigation -->
+    <header class="max-w-5xl w-full mx-auto px-6 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center shadow-md">
+                <div class="w-5 h-5 bg-amber-500 rounded-sm relative flex items-center justify-center">
+                    <div class="w-3 h-1 bg-slate-900 rounded-full"></div>
+                </div>
+            </div>
+            <span class="font-bold text-xl tracking-tight text-white">BlindSpot <span class="text-amber-500">PDF</span></span>
         </div>
-      </div>
+        <button onclick="toggleModal()" class="text-xs font-medium text-slate-400 hover:text-slate-200 transition-colors">
+            Privacy Policy
+        </button>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="max-w-4xl mx-auto px-6 py-12 text-center flex flex-col items-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-8">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            AIR-GAP ACTIVE • 100% ON-DEVICE
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            Sanitize sensitive PDF data with <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">zero cloud risk</span>.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-light mb-10 leading-relaxed">
+            Automatic and manual redaction designed for complete digital ownership. Your documents never leave your device memory.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a href="#download" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-base transition-all transform active:scale-95 shadow-lg shadow-amber-500/20">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Get BlindSpot PDF
+            </a>
+            <button onclick="toggleModal()" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-base border border-slate-700 transition-all">
+                Read Privacy Guarantee
+            </button>
+        </div>
+
+        <!-- App Guarantee Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 w-full text-left">
+            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h3 class="text-white font-semibold mb-1">Zero-Cloud Dependency</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">No servers, no tracking, and no third-party APIs. All processing stays strictly local.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-white font-semibold mb-1">Smart Auto-Detect</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Instantly locate emails, phone numbers, tax IDs, and financial records with a single tap.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-white font-semibold mb-1">Permanent Blackout</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Redacted elements are permanently removed from the document stream, not just visually hidden.</p>
+            </div>
+        </div>
     </main>
-  </body>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl w-full mx-auto px-6 py-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 BlindSpot PDF. All rights reserved.</p>
+        <button onclick="toggleModal()" class="hover:text-slate-300 transition-colors">Privacy Policy</button>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-xl font-bold text-white">Privacy Policy</h2>
+                <button onclick="toggleModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-300 leading-relaxed">
+                <div>
+                    <span class="text-xs text-slate-500 block mb-1">Effective & Last Updated: October 25, 2026</span>
+                    <h3 class="text-base font-semibold text-white mb-2">Our Core Privacy Commitment</h3>
+                    <p>At <strong>BlindSpot PDF</strong>, we believe that your documents are strictly your business. We built this application around a simple principle: <strong>your data should never leave your device</strong>.</p>
+                    <p class="mt-2">BlindSpot PDF operates with zero-cloud dependency. All document processing, text analysis, and redactions happen entirely locally on your phone or tablet.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-white">1. Information We Do Not Collect</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400">
+                        <li><strong>Document Files:</strong> We never upload, transfer, or store your PDFs or images on external servers.</li>
+                        <li><strong>Redacted Content:</strong> Names, addresses, emails, phone numbers, tax IDs, credit card numbers, or custom terms remain entirely in your device memory.</li>
+                        <li><strong>Personal Identifiers:</strong> We do not collect your name, email address, phone number, or device identifiers.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-white">2. Local Device Permissions</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-400">
+                        <li><strong>Storage / File Access:</strong> Used exclusively to let you select a PDF or image from your local files and save the redacted copy back.</li>
+                        <li><strong>Camera / Photos (Optional):</strong> Used only if you capture a document image directly within the app for redaction.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-white">3. Third-Party Services & Analytics</h4>
+                    <p class="text-slate-400">BlindSpot PDF does <strong>not</strong> include third-party tracking SDKs, advertising frameworks, remote OCR APIs, or behavior analytics tools.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-white">4. Contact Us</h4>
+                    <p class="text-slate-400">For questions regarding our privacy practices, contact us at: <a href="mailto:privacy@blindspotpdf.app" class="text-amber-400 hover:underline">privacy@blindspotpdf.app</a></p>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-800 bg-slate-900/50 text-right">
+                <button onclick="toggleModal()" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-sm transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.toggle('hidden');
+        }
+    </script>
+</body>
 </html>
